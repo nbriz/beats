@@ -1,0 +1,16 @@
+<button>start</button>
+
+<script src="https://tonejs.github.io/build/Tone.js"></script>
+<script>
+  /* global Tone */
+  
+  const button = document.querySelector('button')
+  
+  function kick (time = Tone.now()) {
+    const synth = new Tone.Synth().toDestination()
+    synth.triggerAttackRelease(110, '8n', time)
+  }
+  
+  button.addEventListener('click', () => kick())
+
+</script>
